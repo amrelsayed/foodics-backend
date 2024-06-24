@@ -14,16 +14,8 @@ class IngredientSeeder extends Seeder
      */
     public function run(): void
     {
-        $beef = Ingredient::create(['name' => 'Beef', 'stock' => 20000, 'stock_threshold' => 20000]);  // 20kg
-        $cheese = Ingredient::create(['name' => 'Cheese', 'stock' => 5000, 'stock_threshold' => 5000]);  // 5kg
-        $onion = Ingredient::create(['name' => 'Onion', 'stock' => 1000, 'stock_threshold' => 1000]);  // 1kg
-
-        $product = Product::create(['name' => 'Burger']);
-
-        $product->ingredients()->attach([
-            $beef->id => ['quantity' => 150],
-            $cheese->id => ['quantity' => 30],
-            $onion->id => ['quantity' => 20],
-        ]);
+        Ingredient::create(['name' => 'Beef', 'stock' => 20000, 'stock_threshold' => 20000]);  // 20kg
+        Ingredient::create(['name' => 'Cheese', 'stock' => 5000, 'stock_threshold' => 5000]);  // 5kg
+        Ingredient::create(['name' => 'Onion', 'stock' => 1000, 'stock_threshold' => 1000]);  // 1kg
     }
 }
